@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import Header from './shared/header';
+import Footer from "./shared/footer"
 import './App.css';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
+        <Header/>
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
+          <img src="" className="App-logo" alt="logo" />
           <p>
             Edit <code>src/App.js</code> and save to reload.
           </p>
@@ -20,6 +22,7 @@ class App extends Component {
             Learn React
           </a>
         </header>
+        <Footer/>
       </div>
     );
   }
