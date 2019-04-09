@@ -1,4 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './css/bootstrap.cosmo.min.css';
 // eslint-disable-next-line
 import $ from 'jquery'; 
 // eslint-disable-next-line

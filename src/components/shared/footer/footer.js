@@ -3,15 +3,15 @@ import React, {Component} from 'react';
 class Footer extends Component {
   render() {
     return (
-      <div className="container-fluid">
+      <div className="container-fluid mt-5">
         <div className="row">
-          <div class="col-sm">
+          <div className="col">
             One
           </div>
-          <div class="col-sm">
+          <div className="col">
             Two
           </div>
-          <div class="col-sm">
+          <div className="col">
             Three
           </div>
         </div>

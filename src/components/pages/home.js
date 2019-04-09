@@ -1,14 +1,14 @@
 import React, {Component} from 'react';
-import Header from '../shared/header';
-import Footer from "../shared/footer";
-import Carousel from '../shared/carousel';
+import Header from '../shared/header/header';
+import Footer from "../shared/footer/footer";
+import Content from '../shared/content/content';
 
 class Home extends Component {
   render() {
     return (
       <div>
         <Header/>
-        <Carousel/>
+        <Content/>
         <Footer/>
       </div>
     );
