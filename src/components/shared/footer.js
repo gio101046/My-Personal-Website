@@ -1,12 +1,21 @@
 import React, {Component} from 'react';
-import ReactDOM from 'react-dom';
 
 class Footer extends Component {
   render() {
     return (
-      <h1>
-        This is a footer!
-      </h1>
+      <div className="container-fluid">
+        <div className="row">
+          <div class="col-sm">
+            One
+          </div>
+          <div class="col-sm">
+            Two
+          </div>
+          <div class="col-sm">
+            Three
+          </div>
+        </div>
+      </div>
     );
   }
 }
