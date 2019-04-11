@@ -89,7 +89,7 @@ class Introduction extends Component {
 
   render() { 
     return (
-      <div className="container-fluid" id="introduction">
+      <div className="container-fluid mt-5" id="introduction">
         <div className="row align-items-center pt-5 pb-5">
           <div className="col">
             <div className="text-center">
@@ -102,7 +102,7 @@ class Introduction extends Component {
               <h2 className="text-left">{this.state.currentLineTwo}<span className={this.getCursorClasses(2)}>|</span></h2>
             </div>
             <div className="mt-5 pl-3"> 
-              <button type="button" class="btn btn-outline-primary btn-lg float-left">Get To Know Me</button>
+              <button type="button" className="btn btn-outline-primary btn-lg float-left">Get To Know Me</button>
             </div>
           </div>
         </div>

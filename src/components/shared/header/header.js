@@ -4,7 +4,7 @@ import './header.css';
 class Header extends Component {
   render() {
     return (
-      <div className="container-fluid">
+      <div className="container-fluid fixed-top">
         <div className="row justify-content-end nav-background-color">
           <div className="col-1 nav-menu-item pt-2 pb-2">
             <h3>Intro</h3>
