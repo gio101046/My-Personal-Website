@@ -89,7 +89,7 @@ class Introduction extends Component {
 
   render() { 
     return (
-      <div className="container-fluid mt-5" id="introduction">
+      <div className="container-fluid mt-5">
         <div className="row align-items-center pt-5 pb-5">
           <div className="col">
             <div className="text-center">

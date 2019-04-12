@@ -13,7 +13,7 @@ class Header extends Component {
             <h3>Bio</h3>
           </div>
           <div className="col-1 nav-menu-item pt-2 pb-2">
-            <h3>Portfolio</h3>
+            <h3>History</h3>
           </div>
           <div className="col-1 nav-menu-item pt-2 pb-2">
             <h3>Skills</h3>
