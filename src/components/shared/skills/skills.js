@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import './skills.css';
-import { ReactComponent } from '*.svg';
 
 class Skills extends Component {
   constructor(props) {
@@ -8,18 +7,32 @@ class Skills extends Component {
     this.state = {
       isProgressBarOneInView: false
     };
+
+    this.progressBarRefs = [
+      React.createRef(), // ONE
+      React.createRef(), // TWO
+      React.createRef(), // THREE
+      React.createRef()  // FOUR
+    ];
   }
 
-  progressBarOneRef = React.createRef();
+  progressBarRefs = [];
 
-  isElementInView = (offset, elementRef) => {
+  isElementInView = (elementRef, offset = 0) => {
     if (!elementRef) return false;
     const top = elementRef.getBoundingClientRect().top;
     return (top + offset) >= 0 && (top - offset) <= window.innerHeight;
   }
 
-  checkProgressBarsInView = () {
-
+  checkProgressBarsInView = () => {
+    for (var i = 0; i < this.progressBarRefs.length; i++) {
+      let progressBarRef = this.progressBarRefs[i];
+      if (this.isElementInView(progressBarRef)) {
+        this.setState({
+          isProgressBarOneInView: true /* In Progress */
+        });
+      }
+    }
   }
 
   render() {
@@ -32,8 +45,8 @@ class Skills extends Component {
             <h2><strong>Skills and Abilities</strong></h2>
             <div className="mt-5 mb-4">
               <h4 className="text-left">C#/.NET</h4>
-              <div className="progress progress-bar-height" id="progress-bar-one">
-                <div className="progress-bar progress-bar-ani" ref={(el) => this.progressBarOneRef = el}
+              <div className="progress progress-bar-height">
+                <div className="progress-bar progress-bar-ani" ref={(el) => this.progressBarRefs[0] = el}
                      role="progressbar" style={{width: isProgressBarOneInView ? 88+'%' : 0}} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
                 </div>
               </div>
@@ -41,19 +54,22 @@ class Skills extends Component {
             <div className="mt-5 mb-4">
               <h4 className="text-left">Javascript</h4>
               <div className="progress progress-bar-height">
-                <div className="progress-bar progress-bar-ani" role="progressbar" style={{width: 75+'%'}} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                <div className="progress-bar progress-bar-ani" ref={(el) => this.progressBarRefs[1] = el}
+                     role="progressbar" style={{width: 75+'%'}} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </div>
             <div className="mt-5 mb-4">
               <h4 className="text-left">Software Design</h4>
               <div className="progress progress-bar-height">
-                <div className="progress-bar" role="progressbar" style={{width: 70+'%'}} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                <div className="progress-bar progress-bar-ani" ref={(el) => this.progressBarRefs[2] = el}
+                     role="progressbar" style={{width: 70+'%'}} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </div>
             <div className="mt-5 mb-4">
               <h4 className="text-left">MSSQL</h4>
               <div className="progress progress-bar-height">
-                <div className="progress-bar" role="progressbar" style={{width: 62+'%'}} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                <div className="progress-bar progress-bar-ani" ref={(el) => this.progressBarRefs[3] = el}
+                     role="progressbar" style={{width: 62+'%'}} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </div>
           </div>
