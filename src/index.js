@@ -5,6 +5,8 @@ import $ from 'jquery';
 // eslint-disable-next-line
 import Popper from 'popper.js'; 
 import 'bootstrap/dist/js/bootstrap.bundle.min';
+import 'animate.css/animate.min.css'
+import 'octicons/build/build.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/App';

@@ -50,34 +50,36 @@ class Skills extends Component {
       <div className="container">
         <div className="row p-5">
           <div className="col">
-            <h2><strong>Skills and Abilities</strong></h2>
-            <div className="mt-5 mb-4">
-              <h4 className="text-left">C#/.NET</h4>
-              <div className="progress progress-bar-height">
-                <div className="progress-bar progress-bar-ani" ref={(el) => this.progressBarRefs[0] = el}
-                     role="progressbar" style={{width: this.state.wasProgressBarInView[0] ? 88+'%' : 0}} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+            <div className="border-top border-bottom ml-2 mr-2 pb-5 pt-5">
+              <h2><strong>Skills and Abilities</strong></h2>
+              <div className="mt-5 mb-4">
+                <h4 className="text-left">C#/.NET</h4>
+                <div className="progress progress-bar-height">
+                  <div className="progress-bar progress-bar-ani" ref={(el) => this.progressBarRefs[0] = el}
+                      role="progressbar" style={{width: this.state.wasProgressBarInView[0] ? 88+'%' : 0}} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="mt-5 mb-4">
-              <h4 className="text-left">Javascript</h4>
-              <div className="progress progress-bar-height">
-                <div className="progress-bar progress-bar-ani" ref={(el) => this.progressBarRefs[1] = el}
-                     role="progressbar" style={{width: this.state.wasProgressBarInView[1] ? 75+'%' : 0}} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+              <div className="mt-5 mb-4">
+                <h4 className="text-left">Javascript</h4>
+                <div className="progress progress-bar-height">
+                  <div className="progress-bar progress-bar-ani" ref={(el) => this.progressBarRefs[1] = el}
+                      role="progressbar" style={{width: this.state.wasProgressBarInView[1] ? 75+'%' : 0}} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
               </div>
-            </div>
-            <div className="mt-5 mb-4">
-              <h4 className="text-left">Software Design</h4>
-              <div className="progress progress-bar-height">
-                <div className="progress-bar progress-bar-ani" ref={(el) => this.progressBarRefs[2] = el}
-                     role="progressbar"style={{width: this.state.wasProgressBarInView[2] ? 70+'%' : 0}} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+              <div className="mt-5 mb-4">
+                <h4 className="text-left">Software Design</h4>
+                <div className="progress progress-bar-height">
+                  <div className="progress-bar progress-bar-ani" ref={(el) => this.progressBarRefs[2] = el}
+                      role="progressbar"style={{width: this.state.wasProgressBarInView[2] ? 70+'%' : 0}} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
               </div>
-            </div>
-            <div className="mt-5 mb-4">
-              <h4 className="text-left">MSSQL</h4>
-              <div className="progress progress-bar-height">
-                <div className="progress-bar progress-bar-ani" ref={(el) => this.progressBarRefs[3] = el}
-                     role="progressbar" style={{width: this.state.wasProgressBarInView[3] ? 62+'%' : 0}} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+              <div className="mt-5 mb-4">
+                <h4 className="text-left">MSSQL</h4>
+                <div className="progress progress-bar-height">
+                  <div className="progress-bar progress-bar-ani" ref={(el) => this.progressBarRefs[3] = el}
+                      role="progressbar" style={{width: this.state.wasProgressBarInView[3] ? 62+'%' : 0}} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
               </div>
             </div>
           </div>

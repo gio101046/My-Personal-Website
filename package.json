@@ -3,9 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "animate.css": "^3.7.0",
     "boostrap": "^2.0.0",
     "bootstrap": "^4.3.1",
     "jquery": "^3.3.1",
+    "octicons": "^8.5.0",
     "popper.js": "^1.15.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",

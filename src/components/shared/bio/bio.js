@@ -10,8 +10,8 @@ class Bio extends Component {
             <div className="mx-auto text-center border-top border-bottom d-flex h-100 w-75">
               <h2 className="align-self-center">
                 My name is <strong>Giovani Rodriguez</strong> and I create tools, applications and websites as solutions for individuals or businesses that need them. 
-                I am problem solver, solution maker upper and answer deilverer. I always itch to learn something new and strive to deliver my best. When I'm not 
-                creating I am either reading, writing or spending time with the people that I care. 
+                I am a problem solver, solution maker upper and answer deilverer. I always itch to learn something new and strive to deliver my best. When I'm not 
+                creating I am either reading, writing or playing games. 
               </h2>
             </div>
           </div>
