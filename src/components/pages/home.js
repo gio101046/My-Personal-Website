@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Header from '../shared/header/header';
+import Navigation from '../shared/header/navigation';
 import Footer from "../shared/footer/footer";
 import Introduction from '../shared/introduction/introduction';
 import Bio from '../shared/bio/bio';
@@ -10,7 +10,7 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <Header/>
+        <Navigation/>
         <Introduction/>
         <Bio/>
         <History/>

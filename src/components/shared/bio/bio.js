@@ -4,7 +4,7 @@ import './bio.css';
 class Bio extends Component {
   render() {
     return (
-      <div className="container-fluid">
+      <div className="container-fluid" id="bio">
         <div className="row row-height-25 p-5">
           <div className="col"> 
             <div className="mx-auto text-center border-top border-bottom d-flex h-100 w-75">

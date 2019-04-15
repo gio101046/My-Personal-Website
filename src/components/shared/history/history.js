@@ -20,7 +20,7 @@ class History extends Component {
         ref: React.createRef(),
         heading: 'EnTec - 2015',
         content: `I graduated from MDC and was offered a position as a teaching assistant at MDC's school of engineering
-                  technology. My goal was to inpire students and help them excel in the area of information technology.`,
+                  technology. My goal was to inpire students and help them excel in the area of IT.`,
         position: 'right'
       },
       {
@@ -73,34 +73,38 @@ class History extends Component {
 
   getTimelineContainerClasses = (timelineContainer, i) => { 
     let defaultClasses = 'timeline-container';
+    let isLeft = timelineContainer.position === 'left';
 
-    if (timelineContainer.position === 'left') {
+    if (isLeft) {
       defaultClasses += ' timeline-left';
     } else {
       defaultClasses += ' timeline-right';
     }
 
     if (this.state.wasTimelineConatinerInView[i]) {
-      return defaultClasses + ' slideInRight animated faster'; /* TODO: fix slideInLeft */
+      defaultClasses += ` ${isLeft ? 'slideInLeft' : 'slideInRight'} animated faster`;
     }
 
-    return defaultClasses;
+    return defaultClasses + ' mb-5';
   }
 
   render() {
     return (
-      <div className="container-fluid p-5">
-        <div className="timeline">
-          {this.timelineContainers.map((timelineContainer, i) => {
-            return (
-              <div className={this.getTimelineContainerClasses(timelineContainer, i)} ref={(el) => timelineContainer.ref = el}>
-                <div className="timeline-content">
-                  <h1>{timelineContainer.heading}</h1>
-                  <h5>{timelineContainer.content}</h5>
+      <div className="container-fluid" id="history">
+        <div className="pb-5">
+          <div className="row-height-5"></div>
+          <div className="timeline">
+            {this.timelineContainers.map((timelineContainer, i) => {
+              return (
+                <div className={this.getTimelineContainerClasses(timelineContainer, i)} ref={(el) => timelineContainer.ref = el}>
+                  <div className="timeline-content">
+                    <h1>{timelineContainer.heading}</h1>
+                    <h5>{timelineContainer.content}</h5>
+                  </div>
                 </div>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
         </div>
       </div>
     );

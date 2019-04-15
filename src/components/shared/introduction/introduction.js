@@ -89,21 +89,23 @@ class Introduction extends Component {
 
   render() { 
     return (
-      <div className="container-fluid mt-5">
+      <div className="container-fluid pt-5" id="intro">
         <div className="row align-items-center pt-5 pb-5">
-          <div className="col">
+          <div className="col-lg-6 col-sm-12">
             <div className="text-center">
               <img src={ProfilePicture} alt="Giovani's Face" className="rounded-circle img-fluid img-thumbnail float-right" width="500" />
             </div>
           </div>
-          <div className="col">
+          <div className="col-lg-6 col-sm-12">
             <div className="pl-3"> 
               <h1 className="text-left">{this.state.currentLineOne}<span className={this.getCursorClasses(1)}>|</span></h1>
               <h2 className="text-left">{this.state.currentLineTwo}<span className={this.getCursorClasses(2)}>|</span></h2>
             </div>
-            <div className="mt-5 pl-3"> 
-              <button type="button" className="btn btn-outline-primary btn-lg float-left">Get To Know Me</button>
-            </div>
+            <a href="#bio">
+              <div className="mt-5 pl-3"> 
+                <button type="button" className="btn btn-outline-primary btn-lg float-left">Get To Know Me</button>
+              </div>
+            </a>
           </div>
         </div>
       </div>

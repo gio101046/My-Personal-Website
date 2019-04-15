@@ -70,8 +70,8 @@ class Skills extends Component {
 
   render() {
     return (
-      <div className="container">
-        <div className="row p-5">
+      <div className="container" id="skills">
+        <div className="row pt-5 pb-5">
           <div className="col">
             <div className="border-top border-bottom ml-2 mr-2 pb-5 pt-5">
               <h2><strong>Skills and Abilities</strong></h2>

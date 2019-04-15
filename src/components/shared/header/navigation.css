@@ -5,3 +5,8 @@
 .nav-menu-item:hover {
   background-color: #d8d8da;
 }
+
+.remove-link-styling {
+  color: inherit !important;
+  text-decoration: inherit !important;
+}
