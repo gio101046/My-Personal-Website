@@ -4,21 +4,42 @@ import './skills.css';
 class Skills extends Component {
   constructor(props) {
     super(props);
+
+    /* Initialize progress bars in view flags in state */
     this.state = {
       wasProgressBarInView: [false, false, false, false]
     };
 
-    this.progressBarRefs = [
-      React.createRef(), // ONE
-      React.createRef(), // TWO
-      React.createRef(), // THREE
-      React.createRef()  // FOUR
+    /* Create static content information */
+    this.progressBars = [
+      {
+        ref: React.createRef(),
+        percentageWidth: 88,
+        heading: "C#/.NET"
+      },
+      {
+        ref: React.createRef(),
+        percentageWidth: 75,
+        heading: "Javascript"
+      },
+      {
+        ref: React.createRef(),
+        percentageWidth: 70,
+        heading: "Software Design"
+      },
+      {
+        ref: React.createRef(),
+        percentageWidth: 62,
+        heading: "MSSQL"
+      }
     ];
   }
 
-  progressBarRefs = [];
+  /* Class field to store static content */
+  progressBars = [];
 
-  isElementInView = (elementRef, offset = 0) => {
+  /* Checks to see if an element is in view using it's ref - REDUNTANT IN OTHER CONTROLLER */
+  isElementInView = (elementRef, offset = 0) => { 
     if (!elementRef) {
       return false;
     }
@@ -26,16 +47,18 @@ class Skills extends Component {
     return (top + offset) >= 0 && (top - offset) <= window.innerHeight;
   }
 
+  /* Sets if progress bar was ever in view flag for each progress bar currently in view */
   checkProgressBarsInView = () => {
     let wasProgressBarInView = this.state.wasProgressBarInView;
 
-    for (var i = 0; i < this.progressBarRefs.length; i++) {
-      let progressBarRef = this.progressBarRefs[i];
-      if (this.isElementInView(progressBarRef)) {
+    for (var i = 0; i < this.progressBars.length; i++) {
+      let progressBar = this.progressBars[i];
+      if (this.isElementInView(progressBar.ref)) {
         wasProgressBarInView[i] = true;
       }
     }
 
+    // Remove event listener once all flags are set
     if (wasProgressBarInView.every(x => x)) {
       window.removeEventListener('scroll', this.checkProgressBarsInView);
     }
@@ -52,35 +75,23 @@ class Skills extends Component {
           <div className="col">
             <div className="border-top border-bottom ml-2 mr-2 pb-5 pt-5">
               <h2><strong>Skills and Abilities</strong></h2>
-              <div className="mt-5 mb-4">
-                <h4 className="text-left">C#/.NET</h4>
-                <div className="progress progress-bar-height">
-                  <div className="progress-bar progress-bar-ani" ref={(el) => this.progressBarRefs[0] = el}
-                      role="progressbar" style={{width: this.state.wasProgressBarInView[0] ? 88+'%' : 0}} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-                  </div>
-                </div>
-              </div>
-              <div className="mt-5 mb-4">
-                <h4 className="text-left">Javascript</h4>
-                <div className="progress progress-bar-height">
-                  <div className="progress-bar progress-bar-ani" ref={(el) => this.progressBarRefs[1] = el}
-                      role="progressbar" style={{width: this.state.wasProgressBarInView[1] ? 75+'%' : 0}} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-              </div>
-              <div className="mt-5 mb-4">
-                <h4 className="text-left">Software Design</h4>
-                <div className="progress progress-bar-height">
-                  <div className="progress-bar progress-bar-ani" ref={(el) => this.progressBarRefs[2] = el}
-                      role="progressbar"style={{width: this.state.wasProgressBarInView[2] ? 70+'%' : 0}} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-              </div>
-              <div className="mt-5 mb-4">
-                <h4 className="text-left">MSSQL</h4>
-                <div className="progress progress-bar-height">
-                  <div className="progress-bar progress-bar-ani" ref={(el) => this.progressBarRefs[3] = el}
-                      role="progressbar" style={{width: this.state.wasProgressBarInView[3] ? 62+'%' : 0}} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-              </div>
+                {this.progressBars.map((progressBar, i) => {
+                  return (
+                    <div className="mt-5 mb-4">
+                      <h4 className="text-left">{progressBar.heading}</h4>
+                      <div className="progress progress-bar-height">
+                        <div className="progress-bar progress-bar-ani" 
+                             ref={(el) => progressBar.ref = el}
+                             role="progressbar" 
+                             style={{width: this.state.wasProgressBarInView[i] ? progressBar.percentageWidth+'%' : 0}} 
+                             aria-valuenow="25" 
+                             aria-valuemin="0" 
+                             aria-valuemax="100">
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
             </div>
           </div>
         </div>
@@ -88,6 +99,7 @@ class Skills extends Component {
     );
   }
 
+  /* When component is initially mounted add scroll event listener */
   componentDidMount() {
     window.addEventListener('scroll', this.checkProgressBarsInView);
   }

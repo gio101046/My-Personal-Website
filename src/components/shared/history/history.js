@@ -8,15 +8,41 @@ class History extends Component {
       wasTimelineConatinerInView: [false, false, false, false]
     };
 
-    this.timelineContainerRefs = [
-      React.createRef(), // ONE
-      React.createRef(), // TWO
-      React.createRef(), // THREE
-      React.createRef()  // FOUR
+    this.timelineContainers = [
+      {
+        ref: React.createRef(),
+        heading: 'Miami Dade College - 2014',
+        content: `I studied at MDC as a Computer Engineering major. I consistently took more programming and computer science
+                  courses than my major required. These included courses like VB, C, C++, Java among other high rigour courses.`,
+        position: 'left'
+      },
+      {
+        ref: React.createRef(),
+        heading: 'EnTec - 2015',
+        content: `I graduated from MDC and was offered a position as a teaching assistant at MDC's school of engineering
+                  technology. My goal was to inpire students and help them excel in the area of information technology.`,
+        position: 'right'
+      },
+      {
+        ref: React.createRef(),
+        heading: 'CS50x Miami - 2016',
+        content: `I completed Harvard's largest MOOC course called CS50 offered at MDC's Idea Center. Was invited to Boston to 
+                  present my project to CS50's professor David Malan. I later volunteered myself as a teaching fellow for others taking
+                  the CS50x Miami course.`,
+        position: 'left'
+      },
+      {
+        ref: React.createRef(),
+        heading: 'InsTech - 2017',
+        content: `After many internships and job applications I was hired by Insurance Technologies. A software company focused on
+                  bringing comprehensive solutions to clients in the insurance industry. I'm currently the lead developer in charge
+                  of a system that is used by 300+ employees.`,
+        position: 'right'
+      },
     ];
   }
 
-  timelineContainerRefs = [];
+  timelineContainers = [];
 
   isElementInView = (elementRef, offset = 0) => {
     if (!elementRef) {
@@ -29,9 +55,9 @@ class History extends Component {
   checkTimelimeContainersInView = () => {
     let wasTimelineConatinerInView = this.state.wasTimelineConatinerInView;
 
-    for (var i = 0; i < this.timelineContainerRefs.length; i++) {
-      let timelineContainer = this.timelineContainerRefs[i];
-      if (this.isElementInView(timelineContainer)) {
+    for (var i = 0; i < this.timelineContainers.length; i++) {
+      let timelineContainerRef = this.timelineContainers[i].ref;
+      if (this.isElementInView(timelineContainerRef)) {
         wasTimelineConatinerInView[i] = true;
       }
     }
@@ -45,12 +71,19 @@ class History extends Component {
     });
   }
 
-  getTimelineContainerClasses = (i) => { 
-    let defaultClasses = "timeline-container timeline-left";
+  getTimelineContainerClasses = (timelineContainer, i) => { 
+    let defaultClasses = 'timeline-container';
+
+    if (timelineContainer.position === 'left') {
+      defaultClasses += ' timeline-left';
+    } else {
+      defaultClasses += ' timeline-right';
+    }
 
     if (this.state.wasTimelineConatinerInView[i]) {
-      return defaultClasses + " animated slideInLeft faster";
+      return defaultClasses + ' slideInRight animated faster'; /* TODO: fix slideInLeft */
     }
+
     return defaultClasses;
   }
 
@@ -58,30 +91,16 @@ class History extends Component {
     return (
       <div className="container-fluid p-5">
         <div className="timeline">
-          <div className={this.getTimelineContainerClasses(0)} ref={(el) => this.timelineContainerRefs[0] = el}>
-            <div className="timeline-content">
-              <h2>2017</h2>
-              <p>Lorem ipsum..</p>
-            </div>
-          </div>
-          <div className="timeline-container timeline-right" ref={(el) => this.timelineContainerRefs[1] = el}>
-            <div className="timeline-content">
-              <h2>2016</h2>
-              <p>Lorem ipsum..</p>
-            </div>
-          </div>
-          <div className="timeline-container timeline-left" ref={(el) => this.timelineContainerRefs[2] = el}>
-            <div className="timeline-content">
-              <h2>2016</h2>
-              <p>Lorem ipsum..</p>
-            </div>
-          </div>
-          <div className="timeline-container timeline-right" ref={(el) => this.timelineContainerRefs[3] = el}>
-            <div className="timeline-content">
-              <h2>2016</h2>
-              <p>Lorem ipsum..</p>
-            </div>
-          </div>
+          {this.timelineContainers.map((timelineContainer, i) => {
+            return (
+              <div className={this.getTimelineContainerClasses(timelineContainer, i)} ref={(el) => timelineContainer.ref = el}>
+                <div className="timeline-content">
+                  <h1>{timelineContainer.heading}</h1>
+                  <h5>{timelineContainer.content}</h5>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     );
