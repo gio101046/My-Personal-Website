@@ -2,3 +2,20 @@
   line-height: 100%;
 }
 
+.profile-image {
+  width: 500px;
+}
+
+@media (max-width: 575.98px) {  /* sm */
+  .line-one-type-size {
+    font-size: 2rem;
+  }
+
+  .line-two-type-size {
+    font-size: 1.5rem;
+  }
+
+  .profile-image {
+    width: 350px;
+  }
+}

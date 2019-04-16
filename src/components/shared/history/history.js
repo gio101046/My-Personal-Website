@@ -92,7 +92,7 @@ class History extends Component {
     return (
       <div className="container-fluid" id="history">
         <div className="pb-5">
-          <div className="row-height-5"></div>
+          <div className="section-height"></div>
           <div className="timeline">
             {this.timelineContainers.map((timelineContainer, i) => {
               return (

@@ -1,7 +1,14 @@
-.row-height-25 {
-  height: 25rem;
+
+.content-width {
+  width: 75%;
 }
 
-.row-background-color {
-  background-color: #eff1f4;
+@media (max-width: 575.98px) {  /* sm */
+  .content-width {
+    width: 85%;
+  }
+
+  .content-type-size {
+    font-size: 1.75rem;
+  }
 }
