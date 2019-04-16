@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import Navigation from '../shared/header/navigation';
+import Navigation from '../shared/navigation/navigation';
 import Footer from "../shared/footer/footer";
-import Introduction from '../shared/introduction/introduction';
+import Introduction from '../shared/introduction/introduction'; 
 import Bio from '../shared/bio/bio';
 import History from '../shared/history/history';
 import Skills from '../shared/skills/skills'

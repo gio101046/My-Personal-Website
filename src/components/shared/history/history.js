@@ -85,26 +85,30 @@ class History extends Component {
       defaultClasses += ` ${isLeft ? 'slideInLeft' : 'slideInRight'} animated faster`;
     }
 
-    return defaultClasses + ' mb-5';
+    if (i === (this.timelineContainers.length - 1)) {
+      defaultClasses += 'mb-3';
+    } else {
+      defaultClasses += 'mb-5';
+    }
+    
+    return defaultClasses;
   }
 
   render() {
     return (
       <div className="container-fluid" id="history">
-        <div className="pb-5">
-          <div className="section-height"></div>
-          <div className="timeline">
-            {this.timelineContainers.map((timelineContainer, i) => {
-              return (
-                <div className={this.getTimelineContainerClasses(timelineContainer, i)} ref={(el) => timelineContainer.ref = el}>
-                  <div className="timeline-content">
-                    <h1>{timelineContainer.heading}</h1>
-                    <h5>{timelineContainer.content}</h5>
-                  </div>
+        <div className="section-height"></div>
+        <div className="timeline">
+          {this.timelineContainers.map((timelineContainer, i) => {
+            return (
+              <div className={this.getTimelineContainerClasses(timelineContainer, i)} ref={(el) => timelineContainer.ref = el}>
+                <div className="timeline-content">
+                  <h1>{timelineContainer.heading}</h1>
+                  <h5>{timelineContainer.content}</h5>
                 </div>
-              );
-            })}
-          </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     );
