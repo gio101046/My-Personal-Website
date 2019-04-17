@@ -101,7 +101,7 @@ class History extends Component {
         <div className="timeline">
           {this.timelineContainers.map((timelineContainer, i) => {
             return (
-              <div className={this.getTimelineContainerClasses(timelineContainer, i)} ref={(el) => timelineContainer.ref = el}>
+              <div className={this.getTimelineContainerClasses(timelineContainer, i)} ref={(el) => timelineContainer.ref = el} key={i}>
                 <div className="timeline-content">
                   <h1>{timelineContainer.heading}</h1>
                   <h5>{timelineContainer.content}</h5>

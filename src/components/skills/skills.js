@@ -77,7 +77,7 @@ class Skills extends Component {
               <h2><strong>Skills and Abilities</strong></h2>
                 {this.progressBars.map((progressBar, i) => {
                   return (
-                    <div className="mt-5 mb-4">
+                    <div className="mt-5 mb-4" key={i}>
                       <h4 className="text-left">{progressBar.heading}</h4>
                       <div className="progress progress-bar-height">
                         <div className="progress-bar progress-bar-ani" 

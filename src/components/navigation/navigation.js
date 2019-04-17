@@ -40,7 +40,7 @@ class NavigationBar extends Component {
           <div className="row justify-content-end nav-background-color">
             {this.navigationOptions.map((navigationOption, i) => {
               return ( 
-                <a className="col-1 nav-menu-item remove-link-styling" href={navigationOption.href}>
+                <a className="col-1 nav-menu-item remove-link-styling" href={navigationOption.href} key={i}>
                   <div className="text-center pt-2 pb-2">
                     <h3>{navigationOption.content}</h3>
                   </div>
@@ -54,7 +54,7 @@ class NavigationBar extends Component {
             <div className="m-3">
               {this.navigationOptions.map((navigationOption, i) => {
                 return ( 
-                  <div className="p-2" data-toggle="collapse" data-target="#navbarToggleExternalContent">
+                  <div className="p-2" data-toggle="collapse" data-target="#navbarToggleExternalContent" key={i}>
                     <a className="remove-link-styling" href={navigationOption.href} >
                       <h4>{navigationOption.content}</h4>
                     </a>
