@@ -71,15 +71,17 @@ class Skills extends Component {
   render() {
     return (
       <div className="container" id="skills">
-        <div className="row pt-5 pb-5">
+        <div className="section-height"></div>
+        <div className="row">
           <div className="col">
             <div className="border-top border-bottom ml-2 mr-2 pb-5 pt-5">
               <h2><strong>Skills and Abilities</strong></h2>
                 {this.progressBars.map((progressBar, i) => {
                   return (
                     <div className="mt-5 mb-4" key={i}>
-                      <h4 className="text-left">{progressBar.heading}</h4>
-                      <div className="progress progress-bar-height">
+                      <h4 className="float-left d-inline-block">{progressBar.heading}</h4>
+                      <h4 className="float-right d-inline-block">{progressBar.percentageWidth+'%'}</h4>
+                      <div className="progress progress-bar-height w-100">
                         <div className="progress-bar progress-bar-ani" 
                              ref={(el) => progressBar.ref = el}
                              role="progressbar" 

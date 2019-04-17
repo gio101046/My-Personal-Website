@@ -3,11 +3,23 @@ html {
   scroll-behavior: smooth; 
 }
 
+.content-width {
+  width: 75%;
+}
+
 .section-height {
   height: 5rem;
 }
 
-@media (max-width: 575.98px) { 
+@media (max-width: 575.98px) {  /* sm */
+  .content-width {
+    width: 90%;
+  }
+
+  .content-text-size {
+    font-size: 1.6rem;
+  }
+
   .section-height {
     height: 3rem;
   }

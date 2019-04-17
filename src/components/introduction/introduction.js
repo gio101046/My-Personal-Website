@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import ProfilePicture from '../../images/home/profilePicture.jpg';
+import ProfilePicture from '../../images/home/profilePictureTwo.jpg';
 import "./introduction.css";
 
 const lineOneText = 'Hi, my name is Giovani.';
