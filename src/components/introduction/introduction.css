@@ -6,7 +6,7 @@
   width: 500px;
 }
 
-@media (max-width: 575.98px) {  /* sm */
+@media (max-width: 575.98px) {  /* xs */
   .line-one-type-size {
     font-size: 2rem;
   }
