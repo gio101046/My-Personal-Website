@@ -37,10 +37,10 @@ class NavigationBar extends Component {
     return (
       <div>
         <div className="container-fluid desktop-nav fixed-top">
-          <div className="row justify-content-end nav-background-color">
+          <div className="row justify-content-center justify-content-xl-end nav-background-color">
             {this.navigationOptions.map((navigationOption, i) => {
               return ( 
-                <a className="col-1 nav-menu-item remove-link-styling" href={navigationOption.href} key={i}>
+                <a className="col-2 col-xl-1 nav-menu-item remove-link-styling" href={navigationOption.href} key={i}>
                   <div className="text-center pt-2 pb-2">
                     <h3>{navigationOption.content}</h3>
                   </div>
