@@ -81,14 +81,10 @@ class History extends Component {
       defaultClasses += ' timeline-right';
     }
 
-    if (this.state.wasTimelineConatinerInView[i]) {
-      defaultClasses += ` ${isLeft ? 'slideInLeft' : 'slideInRight'} animated faster`;
-    }
-
     if (i === (this.timelineContainers.length - 1)) {
-      defaultClasses += 'mb-3';
+      defaultClasses += ' mb-3';
     } else {
-      defaultClasses += 'mb-5';
+      defaultClasses += ' mb-5';
     }
     
     return defaultClasses;
