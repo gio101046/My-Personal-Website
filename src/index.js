@@ -1,5 +1,4 @@
 import './css/bootstrap.cosmo.min.css';
-import 'animate.css/animate.min.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/App';
